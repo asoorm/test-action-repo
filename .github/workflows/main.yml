@@ -12,5 +12,5 @@ jobs:
     steps:
     - uses: asoorm/tyk-sync-action@v0.3
       with:
-        tyk-sync-version: v1.2.1
+        tyk-sync-version: 1.2.1
     - run: tyk-sync -h
