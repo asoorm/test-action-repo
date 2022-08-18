@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Download Tyk Sync
     steps:
-    - uses: asoorm/tyk-sync-action@v0.1
+    - uses: asoorm/tyk-sync-action@v0.2
       with:
         tyk-sync-version: v1.2.1
     - run: tyk-sync -h
