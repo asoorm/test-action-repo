@@ -1,0 +1,21 @@
+name: Deploy my APIs
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  download_sync:
+    runs-on: ubuntu-latest
+    name: Download Tyk Sync
+    steps:
+    - uses: asoorm/tyk-sync-action@v0.1
+      with:
+        version: v1.2.1
+    - run: tyk-sync -h
