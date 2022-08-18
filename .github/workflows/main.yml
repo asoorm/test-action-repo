@@ -13,4 +13,10 @@ jobs:
     - uses: asoorm/tyk-sync-action@v0.3
       with:
         tyk-sync-version: 1.2.1
+      env:
+        DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
+        DASHBOARD_SECRET: ${{ secrets.DASHBOARD_SECRET }}
+    - run: |
+        ls -al
     - run: tyk-sync -h
+    - run: tyk-sync sync --path ./apps --dashboard ${DASHBOARD_URL} --secret ${DASHBOARD_SECRET}
